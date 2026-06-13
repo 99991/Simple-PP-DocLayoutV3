@@ -64,6 +64,24 @@ for path, result in zip(paths, results):
 
 The detected regions can then be used for e.g. Optical Character Recognition (OCR) with [Simple-GLM-OCR](https://github.com/99991/Simple-GLM-OCR).
 
+```python
+from simplelayout import SimplePPDocLayoutV3
+from simpleglmocr import SimpleGlmOcr
+
+layout_model = SimplePPDocLayoutV3()
+ocr_model = SimpleGlmOcr()
+
+result, = layout_model.run(["testimage.png"])
+
+for bbox, label in zip(result["boxes"], result["labels"]):
+    crop = result["image"].crop(bbox)
+
+    text = ocr_model.run("Text Recognition:", crop)
+
+    print(f"{label}:\n\n{text}")
+    print("-" * 80)
+```
+
 # Installation
 
 ```bash
