@@ -1,6 +1,6 @@
 # Simple-PP-DocLayoutV3
 
-Simple document layout analysis based on [PP-DocLayoutV3 of PaddleOCR-VL-1.5](https://huggingface.co/PaddlePaddle/PP-DocLayoutV3) with fewer dependencies. 
+Simple document layout analysis based on [PP-DocLayoutV3 of PaddleOCR-VL-1.5](https://huggingface.co/PaddlePaddle/PP-DocLayoutV3) with fewer dependencies. Detect and classify text, titles, formulas, figures, and more in images. Works great together with [Simple-GLM-OCR](https://github.com/99991/Simple-GLM-OCR/issues) for Optical Character Recognition (OCR) for text extraction.
 
 <div align="center">
 <img width="800" height="1041" alt="detection result example" src="https://github.com/user-attachments/assets/bcff3168-9015-4db0-8296-f789b129070f" />
@@ -62,7 +62,7 @@ for path, result in zip(paths, results):
     plt.show()
 ```
 
-The detected regions can then be used for e.g. Optical Character Recognition (OCR) with [Simple-GLM-OCR](https://github.com/99991/Simple-GLM-OCR).
+The detected regions can then be used for e.g. OCR with [Simple-GLM-OCR](https://github.com/99991/Simple-GLM-OCR).
 
 ```python
 from simplelayout import SimplePPDocLayoutV3
